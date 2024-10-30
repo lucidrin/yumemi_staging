@@ -1,11 +1,13 @@
+/* 頁面樣式 */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* 改為從上方開始排列 */
     height: 100vh;
     margin: 0;
+    overflow-y: auto; /* 確保整頁可滾動 */
 }
 
 .container {
@@ -16,6 +18,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    margin-top: 20px; /* 增加距離，避免被上方元素遮蓋 */
 }
 
 h1, h2 {
@@ -25,6 +28,8 @@ h1, h2 {
 .menu, #orderList {
     text-align: left;
     margin-bottom: 20px;
+    max-height: 300px; /* 設置最大高度 */
+    overflow-y: auto; /* 允許垂直滾動 */
 }
 
 ul {
