@@ -17,9 +17,26 @@
                 <!-- 這裡的項目將由 JavaScript 動態生成 -->
             </ul>
         </div>
+
+        <!-- 新增桌號選項和備註欄位 -->
+        <div class="order-details">
+            <label for="tableNumber">桌號：</label>
+            <select id="tableNumber">
+                <!-- 1-20 選項 -->
+                <script>
+                    for (let i = 1; i <= 20; i++) {
+                        document.write(`<option value="${i}">${i}</option>`);
+                    }
+                </script>
+            </select>
+
+            <label for="note">備註（總訂單）：</label>
+            <textarea id="note" placeholder="輸入備註"></textarea>
+        </div>
         
         <h2>您的點餐紀錄</h2>
         <ul id="orderList"></ul>
+        <button id="submitOrder">提交訂單</button>
         <button id="clearOrders">清除紀錄</button>
     </div>
     <script src="script.js"></script>
