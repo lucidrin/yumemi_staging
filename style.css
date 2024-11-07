@@ -1,68 +1,121 @@
-/* 頁面樣式 */
+/* 基本樣式 */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* 改為從上方開始排列 */
-    height: 100vh;
     margin: 0;
-    overflow-y: auto; /* 確保整頁可滾動 */
-}
-
-.container {
-    width: 100%;
-    max-width: 400px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    margin-top: 20px; /* 增加距離，避免被上方元素遮蓋 */
-}
-
-h1, h2 {
+    padding: 0;
+    background-color: #f4f4f9;
     color: #333;
 }
 
-.menu, #orderList {
-    text-align: left;
-    margin-bottom: 20px;
-    max-height: 300px; /* 設置最大高度 */
-    overflow-y: auto; /* 允許垂直滾動 */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* 增加垂直滾動條 */
+    max-height: 80vh; /* 限制容器最大高度為視口的80%，避免被裁切 */
 }
 
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    color: #555;
+}
+
+/* 按鈕樣式 */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#submitOrder {
+    background-color: #4CAF50;
+    color: #fff;
+    margin-right: 10px;
+}
+
+#clearOrders {
+    background-color: #f44336;
+    color: #fff;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* 訂單列表樣式 */
 ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
 }
 
 li {
-    margin: 10px 0;
-    cursor: pointer;
-}
-
-li:hover {
-    color: #007bff;
-}
-
-button {
     padding: 10px;
-    background-color: #28a745;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 彈出視窗遮罩背景 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* 彈出視窗樣式 */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 300px;
+    text-align: center;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 確定按鈕樣式 */
+#confirmIceLevel, #confirmNote {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #218838;
+#confirmIceLevel:hover, #confirmNote:hover {
+    background-color: #45a049;
 }
 
-#clearOrders {
-    background-color: #dc3545;
+label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
 }
 
-#clearOrders:hover {
-    background-color: #c82333;
-}
+select, input[type="text"] {
+    padding: 5px;
+    font-size:
