@@ -230,6 +230,12 @@ function getOrderNote() {
     });
 }
 
+// 點選菜單項目後自動加入訂單
+async function addOrder(item) {
+    let note = "";
+
+    console.log("選擇的品項:", item.name, "類別:", item.category); // 調試信息
+
 
 // 檢查是否為不供應主餐的時間段（UTC+8 星期一到星期五的 12:00-17:00）
 function isLunchRestrictionTime() {
@@ -243,20 +249,16 @@ function isLunchRestrictionTime() {
     return day >= 1 && day <= 5 && hour >= 12 && hour < 17;
 }
 
-// 點選菜單項目後自動加入訂單
-async function addOrder(item) {
-    let note = "";
-
-    console.log("選擇的品項:", item.name, "類別:", item.category); // 調試信息
-
-// 檢查是否超過廚房最終出餐時間（每天 20:30 - 隔天 12:00）
+// 檢查是否超過廚房最終出餐時間（每天 20:30 - 23:59）
 function isAfterServiceTime() {
     const now = new Date();
     const hour = now.getHours();
     const minute = now.getMinutes();
 
-    // 判斷是否為 20:30 之後或隔天的中午 12:00 之前
-    return (hour > 20 || (hour === 20 && minute >= 30)) || hour < 12;
+    console.log("Day:", day, "Hour:", hour); // 調試信息
+
+    // 判斷是否為 20:30 之後或 24:00 之前
+    return (hour === 20 && minutes >= 30) || (hour >= 21 && hour < 24);
 }
 
 // 檢查是否超過吧台最終出餐時間（每天 21:00 - 隔天 12:00）
