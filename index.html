@@ -1,25 +1,53 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>夢見點餐紀錄系統</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <h1>夢見點餐紀錄系統</h1>
-        <h1 style="color: grey; font-size: 12px;">主餐平日早班不供應 平日低消150 假日低消180</h1>
+        <h1 style="color: grey; font-size: 12px;">主餐平日早班不供應 平日低消 150 假日低消 180</h1>
         <h1 style="color: grey; font-size: 12px;">
-            廚房最終出餐時間為20:30<br>
-            吧台最終出餐時間為21:00<br>
-            周邊最後登記時間為20:50<br>
-            餐飲皆收取10%的服務費<br>
-            座位位置選擇(方便自己記錄即可)<br>
-            =========靠電視那一側的牆壁=========<br>
-            + 門口#    座位4 座位5 座位6  #舞台 +<br>
-            + 落地窗#  座位1 座位2 座位3  #吧台 +<br>
-            =========靠全家那一側的牆壁=========<br>
+            廚房最終出餐時間為 20:30<br>
+            吧台最終出餐時間為 21:00<br>
+            周邊最後登記時間為 20:50<br>
+            餐飲皆收取 10% 的服務費<br>
+            座位位置選擇 (方便自己記錄即可)<br>
+
+            <body>
+                <div style="text-align: center; margin-top: 20px;">
+                    <img src="https://i.imgur.com/WRs0M6w.png" alt="圖片展示" style="width: 300px; height: auto;">
+                </div>
+            </body>
+            <div style="text-align: center; font-family: Arial, sans-serif; line-height: 1.5;">
+                <div>=========靠電視那一側的牆壁=========</div>
+                <div>
+                    <span>+ 門口#</span>
+                    <span style="margin: 0 15px; color: pink;">座位 A</span>
+                    <span style="color: pink;">座位 B</span>
+                    <span style="margin-left: 15px;">#舞台+</span>
+                </div>
+                <div>
+                    <span>+</span>
+                    <span style="margin: 0 15px; color: pink;">座位 4</span>
+                    <span style="color: pink;">座位 5</span>
+                    <span style="margin: 15px; color: pink;">座位 6</span>
+                    <span>+</span>
+                </div>
+                <div>
+                    <span>+ 落地窗#</span>
+                    <span style="margin: 0 15px; color: pink;">座位 1</span>
+                    <span style="color: pink;">座位 2</span>
+                    <span style="margin: 0 15px; color: pink;">座位 3</span>
+                    <span>#吧台 +</span>
+                </div>
+                <div>=========靠全家那一側的牆壁=========</div>
+            </div>
         </h1>
         <!-- 桌號選擇 -->
         <label for="tableNumber">桌號：</label>
@@ -35,12 +63,14 @@
         <!-- 桌位位置選擇 -->
         <label for="tablePosition">座位位置：</label>
         <select id="tablePosition">
-            <option value="座位1">座位1</option>
-            <option value="座位2">座位2</option>
-            <option value="座位3">座位3</option>
-            <option value="座位4">座位4</option>
-            <option value="座位5">座位5</option>
-            <option value="座位6">座位6</option>
+            <option value="座位A">座位 A</option>
+            <option value="座位B">座位 B</option>
+            <option value="座位1">座位 1</option>
+            <option value="座位2">座位 2</option>
+            <option value="座位3">座位 3</option>
+            <option value="座位4">座位 4</option>
+            <option value="座位5">座位 5</option>
+            <option value="座位6">座位 6</option>
         </select>
 
         <!-- 菜單區域 -->
@@ -57,8 +87,9 @@
 
         <!-- 顯示服務費和總金額 -->
         <div id="totalContainer">
-            <p id="serviceChargeDisplay">服務費：$0</p>
-            <p id="totalAmountDisplay">總金額：$0</p>
+            <div id="subtotalDisplay">餐點金額：$0</div>
+            <div id="serviceChargeDisplay">服務費：$0</div>
+            <div id="totalAmountDisplay">總金額：$0</div><br>
         </div>
 
         <!-- 提交與清除訂單按鈕 -->
@@ -71,7 +102,7 @@
             <thead>
                 <tr>
                     <th>桌號</th>
-                    <th>桌位位置</th>
+                    <th>座位位置</th>
                     <th>訂單明細</th>
                     <th>服務費</th>
                     <th>總金額</th>
@@ -85,4 +116,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>

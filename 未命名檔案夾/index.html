@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夢見點餐紀錄系統</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>夢見點餐紀錄系統</h1>
+        <h1 style="color: grey; font-size: 12px;">主餐平日早班不供應 平日低消150 假日低消180</h1>
+        <h1 style="color: grey; font-size: 12px;">
+            廚房最終出餐時間為20:30<br>
+            吧台最終出餐時間為21:00<br>
+            周邊最後登記時間為20:50<br>
+            餐飲皆收取10%的服務費<br>
+            座位位置選擇(方便自己記錄即可)<br>
+            =========靠電視那一側的牆壁=========<br>
+            + 門口#    座位4 座位5 座位6  #舞台 +<br>
+            + 落地窗#  座位1 座位2 座位3  #吧台 +<br>
+            =========靠全家那一側的牆壁=========<br>
+        </h1>
+        <!-- 桌號選擇 -->
+        <label for="tableNumber">桌號：</label>
+        <select id="tableNumber">
+            <!-- 動態生成桌號選項 -->
+            <script>
+                for (let i = 1; i <= 20; i++) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                }
+            </script>
+        </select>
+
+        <!-- 桌位位置選擇 -->
+        <label for="tablePosition">座位位置：</label>
+        <select id="tablePosition">
+            <option value="座位1">座位1</option>
+            <option value="座位2">座位2</option>
+            <option value="座位3">座位3</option>
+            <option value="座位4">座位4</option>
+            <option value="座位5">座位5</option>
+            <option value="座位6">座位6</option>
+        </select>
+
+        <!-- 菜單區域 -->
+        <div class="menu">
+            <h2>菜單</h2>
+            <ul id="menuList">
+                <!-- JavaScript 動態生成的菜單項目將插入此處 -->
+            </ul>
+        </div>
+
+        <!-- 點餐紀錄區域 -->
+        <h2 style="color: pink;">點餐紀錄</h2>
+        <ul id="orderList"></ul>
+
+        <!-- 顯示服務費和總金額 -->
+        <div id="totalContainer">
+            <p id="serviceChargeDisplay">服務費：$0</p>
+            <p id="totalAmountDisplay">總金額：$0</p>
+        </div>
+
+        <!-- 提交與清除訂單按鈕 -->
+        <button id="submitOrder">提交訂單</button>
+        <button id="clearOrders">清除紀錄</button>
+
+        <!-- 訂單紀錄表格 -->
+        <h2>訂單紀錄</h2>
+        <table id="orderHistoryTable" border="1">
+            <thead>
+                <tr>
+                    <th>桌號</th>
+                    <th>桌位位置</th>
+                    <th>訂單明細</th>
+                    <th>服務費</th>
+                    <th>總金額</th>
+                    <th>提交訂單時間</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 每次提交的訂單紀錄將插入到這裡 -->
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

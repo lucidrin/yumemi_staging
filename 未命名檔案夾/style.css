@@ -16,7 +16,7 @@ body {
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     overflow-y: auto; /* 增加垂直滾動條 */
-    max-height: 80vh; /* 限制容器最大高度為視口的 80%，避免被裁切 */
+    max-height: 80vh; /* 限制容器最大高度為視口的80%，避免被裁切 */
 }
 
 h1 {
